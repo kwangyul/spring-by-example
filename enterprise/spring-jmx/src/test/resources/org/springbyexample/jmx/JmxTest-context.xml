@@ -13,11 +13,12 @@
     <context:mbean-export/>
 
     <!-- Expose JMX over JMXMP -->
-    <bean id="serverConnector" class="org.springframework.jmx.support.ConnectorServerFactoryBean" />
+    <bean id="serverConnector" class="org.springframework.jmx.support.ConnectorServerFactoryBean"
+          p:serviceUrl="service:jmx:jmxmp://localhost:19875"/>
 
     <!-- Client connector to JMX over JMXMP -->
     <bean id="clientConnector" class="org.springframework.jmx.support.MBeanServerConnectionFactoryBean"
-          p:serviceUrl="service:jmx:jmxmp://localhost:9875" />
+          p:serviceUrl="service:jmx:jmxmp://localhost:19875" />
 
     <!-- Client ServerManager proxy to JMX over JMXMP -->
     <bean id="serverManagerProxy" class="org.springframework.jmx.access.MBeanProxyFactoryBean"
