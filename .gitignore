@@ -9,3 +9,5 @@ activemq-data
 .DS_Store
 .settings
 RemoteSystemsTempFiles
+.idea/
+*.iml
